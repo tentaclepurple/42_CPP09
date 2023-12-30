@@ -112,7 +112,7 @@ bool	BitcoinExchange::checkDate(const std::string date)
 
 	if (year.length() != 4 || month.length() != 2 || day.length() != 2)
 		return false;
-	if (std::atoi(year.c_str()) < 0 || std::atoi(year.c_str()) > 2024)
+	if (std::atoi(year.c_str()) < 2009 || std::atoi(year.c_str()) > 2024)
 		return false;
 	if (std::atoi(month.c_str()) < 0 || std::atoi(month.c_str()) > 12)
 		return false;
