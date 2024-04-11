@@ -1,27 +1,35 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: imontero <imontero@student.42.fr>          +#+  +:+       +#+        */
+/*   By: imontero <imontero@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 17:45:20 by imontero          #+#    #+#             */
-/*   Updated: 2023/12/28 17:45:20 by imontero         ###   ########.fr       */
+/*   Updated: 2024/04/11 17:31:15 by imontero         ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 #include "RPN.hpp"
 #include <cctype>
 
+bool onlySpaces(const std::string& str)
+{
+    for (size_t i = 0; i < str.length(); ++i)
+        if (!isspace(str[i]))
+            return false;
+    return true; 
+}
+
 int	main(int argc, char **argv)
 {
-	if (argc != 2)
-	{
-		std::cout << "Usage example: ./RPN \"2 3 + 4*\"" << std::endl;
-		return (-1);
-	}
-	RPN inst;
+	if (argc != 2 ) return (std::cout << "Usage example: ./RPN \"2 3 + 4*\"" << std::endl, -1);
+
 	std::string str(argv[1]);
+	
+	if (onlySpaces(str)) return (std::cout << "Usage example: ./RPN \"2 3 + 4*\" 🖕" << std::endl, -1);
+
+	RPN inst;
 	std::string check = "0123456789+-*/ ";
 	int i = 0;
 	while (str[i])

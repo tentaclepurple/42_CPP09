@@ -1,14 +1,14 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: imontero <imontero@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: imontero <imontero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 12:01:05 by imontero          #+#    #+#             */
-/*   Updated: 2024/01/25 17:09:59 by imontero         ###   ########.fr       */
+/*   Updated: 2023/12/28 12:01:05 by imontero         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
 
@@ -117,8 +117,6 @@ bool	BitcoinExchange::checkDate(const std::string date)
 	if (std::atoi(month.c_str()) < 0 || std::atoi(month.c_str()) > 12)
 		return false;
 	if (std::atoi(day.c_str()) < 0 || std::atoi(day.c_str()) > 31)
-		return false;
-	if (std::atoi(year.c_str()) < 2009 || (atoi(year.c_str()) == 2009 && atoi(month.c_str()) == 1 && atoi(day.c_str()) < 2))
 		return false;
 	return true;
 }
